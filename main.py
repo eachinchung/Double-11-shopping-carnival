@@ -38,8 +38,40 @@ def shop_around():
             sleep(0.25)
 
         touch_back()
-        sleep(random.uniform(2, 4))
+        sleep(uniform(2, 4))
+
+
+def main_conference_hall():
+    """
+    浏览双十一主会场
+    :return:
+    """
+    system('adb shell input tap 900 1350')
+
+    bar = tqdm(range(100))
+    for item in bar:
+        bar.set_description('开始浏览双十一主会场')
+        sleep(0.25)
+    touch_back()
+
+
+def conference_hall():
+    """
+    浏览其他分会场
+    :return:
+    """
+    for i in range(4):
+        system('adb shell input tap 900 1500')
+
+        bar = tqdm(range(100))
+        for item in bar:
+            bar.set_description('开始浏览第 {} 个分会场'.format(i))
+            sleep(0.25)
+        touch_back()
+        sleep(uniform(2, 4))
 
 
 if __name__ == '__main__':
     shop_around()
+    main_conference_hall()
+    conference_hall()
