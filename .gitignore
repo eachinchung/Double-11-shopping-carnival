@@ -1,0 +1,7 @@
+# 此为注释 ,以下将被 Git 忽略
+.idea/
+.env
+__pycache__
+.vscode
+
+
