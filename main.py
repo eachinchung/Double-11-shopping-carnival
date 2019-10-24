@@ -1,5 +1,5 @@
 from os import system
-from random import uniform, random, randint
+from random import uniform, randint
 from time import sleep
 
 from tqdm import tqdm
