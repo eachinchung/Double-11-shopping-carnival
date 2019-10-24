@@ -6,7 +6,7 @@
 
 请打开淘宝，进入领猫币中心。
 
-![Image text](./img/WechatIMG6.jpeg)
+<img src="./img/WechatIMG6.jpeg" width="375"/>
 
 将手机连接电脑，打开开发者模式，并允许usb调试。
 
