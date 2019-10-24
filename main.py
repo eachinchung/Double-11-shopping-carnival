@@ -1,5 +1,5 @@
 from os import system
-from random import uniform, random
+from random import uniform, random, randint
 from time import sleep
 
 from tqdm import tqdm
@@ -16,12 +16,9 @@ def touch_back():
 def swipe():
     """
     模拟滑动
-    为模拟人类行为，进去网页前，随机休眠一段时间。
     :return:
     """
-    sleep(uniform(2, 4))
-    system('adb shell input swipe {} {} {} {}'.format(random.randint(800, 1000), random.randint(1550, 1650),
-                                                      random.randint(800, 1000), random.randint(1150, 1250)))
+    system('adb shell input swipe {} 1600 {} 1200'.format(randint(800, 1000), randint(800, 1000)))
 
 
 def shop_around():
@@ -52,7 +49,9 @@ def main_conference_hall():
     for item in bar:
         bar.set_description('开始浏览双十一主会场')
         sleep(0.25)
+
     touch_back()
+    sleep(uniform(2, 4))
 
 
 def conference_hall():
@@ -65,13 +64,53 @@ def conference_hall():
 
         bar = tqdm(range(100))
         for item in bar:
-            bar.set_description('开始浏览第 {} 个分会场'.format(i))
+            bar.set_description('开始浏览第 {} 个分会场'.format(i + 1))
             sleep(0.25)
+
         touch_back()
         sleep(uniform(2, 4))
+
+
+def other():
+    """
+    其他猫币任务
+    :return:
+    """
+    for i in range(2):
+        system('adb shell input tap 900 1500')
+
+        bar = tqdm(range(100))
+        for item in bar:
+            bar.set_description('开始其他猫币任务 {} '.format(i + 1))
+            sleep(0.25)
+
+        touch_back()
+        sleep(uniform(2, 4))
+
+
+def farm():
+    """
+    天猫农场
+    :return:
+    """
+    system('adb shell input tap 900 1650')
+    sleep(uniform(2, 4))
+
+    system('adb shell input tap 150 1550')
+
+    bar = tqdm(range(100))
+    for item in bar:
+        bar.set_description('开始浏览天猫农场')
+        sleep(0.40)
+
+    touch_back()
+    touch_back()
 
 
 if __name__ == '__main__':
     shop_around()
     main_conference_hall()
     conference_hall()
+    swipe()
+    other()
+    farm()
