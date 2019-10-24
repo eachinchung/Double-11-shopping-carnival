@@ -4,6 +4,12 @@
 
 请先在电脑安装python3，并配置好adb
 
+请打开淘宝，进入领猫币中心。
+
+![Image text](./img/WechatIMG6.jpeg)
+
+将手机连接电脑，打开开发者模式，并允许usb调试。
+
 ```
 ➜ pip install tqdm
 ➜ python install main.py

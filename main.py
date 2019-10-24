@@ -5,10 +5,6 @@ from time import sleep
 from tqdm import tqdm
 
 
-def get_tasks():
-    system('adb shell input tap 900 1700')
-
-
 def touch_back():
     """
     模拟点击安卓的返回键
@@ -46,5 +42,4 @@ def shop_around():
 
 
 if __name__ == '__main__':
-    get_tasks()
     shop_around()

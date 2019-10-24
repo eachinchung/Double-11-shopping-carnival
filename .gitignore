@@ -1,5 +1,0 @@
-# 此为注释 ,以下将被 Git 忽略
-.idea/
-venv
-__pycache__
-
