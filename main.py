@@ -96,6 +96,11 @@ def farm():
     system('adb shell input tap 900 1650')
     sleep(uniform(2, 4))
 
+    bar = tqdm(range(100))
+    for item in bar:
+        bar.set_description('正在打开天猫农场')
+        sleep(0.05)
+
     system('adb shell input tap 150 1550')
 
     bar = tqdm(range(100))
