@@ -26,13 +26,13 @@ def shop_around():
     逛店铺
     :return:
     """
-    for i in range(20):
-        system('adb shell input tap 900 1200')
-        bar = tqdm(range(100))
+    for i in range(18):
+        system('adb shell input tap 900 1650')
+        bar = tqdm(range(25))
 
         for item in bar:
             bar.set_description('开始逛第 {} 间店铺'.format(i + 1))
-            sleep(0.25)
+            system('adb shell input swipe {} 1600 {} 1200'.format(randint(800, 1000), randint(800, 1000)))
 
         touch_back()
         sleep(uniform(2, 4))
@@ -43,12 +43,12 @@ def main_conference_hall():
     浏览双十一主会场
     :return:
     """
-    system('adb shell input tap 900 1350')
+    system('adb shell input tap 900 1200')
 
-    bar = tqdm(range(100))
+    bar = tqdm(range(25))
     for item in bar:
         bar.set_description('开始浏览双十一主会场')
-        sleep(0.25)
+        system('adb shell input swipe {} 1600 {} 1200'.format(randint(800, 1000), randint(800, 1000)))
 
     touch_back()
     sleep(uniform(2, 4))
@@ -59,13 +59,13 @@ def conference_hall():
     浏览其他分会场
     :return:
     """
-    for i in range(4):
-        system('adb shell input tap 900 1500')
+    for i in range(6):
+        system('adb shell input tap 900 1350')
 
-        bar = tqdm(range(100))
+        bar = tqdm(range(25))
         for item in bar:
             bar.set_description('开始浏览第 {} 个分会场'.format(i + 1))
-            sleep(0.25)
+            system('adb shell input swipe {} 1600 {} 1200'.format(randint(800, 1000), randint(800, 1000)))
 
         touch_back()
         sleep(uniform(2, 4))
@@ -79,10 +79,10 @@ def other():
     for i in range(2):
         system('adb shell input tap 900 1500')
 
-        bar = tqdm(range(100))
+        bar = tqdm(range(25))
         for item in bar:
             bar.set_description('开始其他猫币任务 {} '.format(i + 1))
-            sleep(0.25)
+            system('adb shell input swipe {} 1600 {} 1200'.format(randint(800, 1000), randint(800, 1000)))
 
         touch_back()
         sleep(uniform(2, 4))
@@ -113,9 +113,9 @@ def farm():
 
 
 if __name__ == '__main__':
-    shop_around()
     main_conference_hall()
     conference_hall()
     swipe()
     other()
-    farm()
+    shop_around()
+    # farm()
