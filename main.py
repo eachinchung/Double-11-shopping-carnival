@@ -76,7 +76,7 @@ def other():
     其他猫币任务
     :return:
     """
-    for i in range(2):
+    for i in range(6):
         system('adb shell input tap 900 1500')
 
         bar = tqdm(range(25))
@@ -93,7 +93,7 @@ def farm():
     天猫农场
     :return:
     """
-    system('adb shell input tap 900 1650')
+    system('adb shell input tap 900 1500')
     sleep(uniform(2, 4))
 
     bar = tqdm(range(100))
@@ -116,6 +116,7 @@ if __name__ == '__main__':
     main_conference_hall()
     conference_hall()
     swipe()
-    other()
+    # other()
     shop_around()
     # farm()
+
