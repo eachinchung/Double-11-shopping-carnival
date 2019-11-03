@@ -26,7 +26,7 @@ def shop_around():
     逛店铺
     :return:
     """
-    for i in range(18):
+    for i in range(20):
         system('adb shell input tap 900 1650')
         bar = tqdm(range(25))
 
@@ -59,7 +59,7 @@ def conference_hall():
     浏览其他分会场
     :return:
     """
-    for i in range(6):
+    for i in range(8):
         system('adb shell input tap 900 1350')
 
         bar = tqdm(range(25))
